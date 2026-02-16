@@ -6,6 +6,7 @@ import {
   PhoneArrowDownLeftIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
+
 const Notifications = () => {
   const [notifications, setNotifications] = useState({
     email: true,
@@ -38,20 +39,20 @@ const Notifications = () => {
   );
 
   return (
-    <div className="bg-[var(--bg-primary)] space-y-4">
-      <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4 px-4">
+    <div className="bg-(--bg-primary) space-y-4">
+      <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-4">
         Notification Channels
       </h3>
-      <div className="rounded-2xl shadow-lg bg-[var(--bg-surface)] p-4 flex items-center justify-between">
+
+      {/* Email */}
+      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
         <div className="flex items-start gap-3">
           <div className="bg-blue-100 p-2 rounded-lg">
             <EnvelopeIcon className="w-6 h-6 text-blue-900" />
           </div>
           <div>
             <h2 className="text-lg font-sm">Email Notifications</h2>
-            <p className="text-sm text-slate-500">
-              Receive notifications via email
-            </p>
+            <p className="text-sm text-slate-500">Receive notifications via email</p>
           </div>
         </div>
         <ToggleButton
@@ -59,16 +60,16 @@ const Notifications = () => {
           onClick={() => toggleSwitch("email")}
         />
       </div>
-      <div className="rounded-2xl shadow-lg bg-[var(--bg-surface)] p-4 flex items-center justify-between">
+
+      {/* SMS */}
+      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
         <div className="flex items-start gap-3">
           <div className="bg-green-100 p-2 rounded-lg">
             <PhoneArrowDownLeftIcon className="w-6 h-6 text-green-700" />
           </div>
           <div>
             <h2 className="text-lg font-sm">SMS Notifications</h2>
-            <p className="text-sm text-slate-500">
-              Receive notifications via SMS
-            </p>
+            <p className="text-sm text-slate-500">Receive notifications via SMS</p>
           </div>
         </div>
         <ToggleButton
@@ -80,21 +81,19 @@ const Notifications = () => {
       <div className="border-t border-slate-200 my-5"></div>
 
       {/* Alert Types */}
-      <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4 px-4">
+      <h3 className="text-lg font-bold text-(--text-primary) mb-4 px-4">
         Alert Types
       </h3>
 
       {/* Transaction */}
-      <div className="rounded-2xl shadow-lg bg-[var(--bg-surface)] p-4 flex items-center justify-between">
+      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
         <div className="flex items-start gap-3">
           <div className="bg-blue-100 p-2 rounded-lg">
             <BellIcon className="w-6 h-6 text-blue-900" />
           </div>
           <div>
             <h2 className="text-lg font-sm">Transaction Alerts</h2>
-            <p className="text-sm text-slate-500">
-              Get notified for all transactions
-            </p>
+            <p className="text-sm text-slate-500">Get notified for all transactions</p>
           </div>
         </div>
         <ToggleButton
@@ -104,16 +103,14 @@ const Notifications = () => {
       </div>
 
       {/* Login */}
-      <div className="rounded-2xl shadow-lg bg-[var(--bg-surface)] p-4 flex items-center justify-between">
+      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
         <div className="flex items-start gap-3">
           <div className="bg-green-100 p-2 rounded-lg">
             <LockClosedIcon className="w-6 h-6 text-green-700" />
           </div>
           <div>
             <h2 className="text-lg font-sm">Login Alerts</h2>
-            <p className="text-sm text-slate-500">
-              Get notified for new login attempts
-            </p>
+            <p className="text-sm text-slate-500">Get notified for new login attempts</p>
           </div>
         </div>
         <ToggleButton
@@ -123,16 +120,14 @@ const Notifications = () => {
       </div>
 
       {/* Marketing */}
-      <div className="rounded-2xl shadow-lg bg-[var(--bg-surface)] p-4 flex items-center justify-between">
+      <div className="rounded-2xl shadow-lg bg-(--bg-surface) p-4 flex items-center justify-between">
         <div className="flex items-start gap-3">
           <div className="bg-purple-100 p-2 rounded-lg">
             <GlobeAltIcon className="w-6 h-6 text-purple-700" />
           </div>
           <div>
             <h2 className="text-lg font-sm">Marketing & Updates</h2>
-            <p className="text-sm text-slate-500">
-              News, product updates, and promotions
-            </p>
+            <p className="text-sm text-slate-500">News, product updates, and promotions</p>
           </div>
         </div>
         <ToggleButton

@@ -9,7 +9,9 @@ export default function SidebarMenuItem({ icon, label, collapsed, subMenu, activ
       <button
         onClick={() => subMenu && setOpen(!open)}
         className={`flex items-center justify-between w-full px-3 py-2 rounded-lg transition ${
-          active ? "bg-[var(--primary)] text-white" : "hover:bg-[var(--bg-primary)]"
+          active
+            ? "bg-(--primary) text-white"
+            : "hover:bg-(--bg-primary) text-(--text-primary)"
         }`}
       >
         <div className="flex items-center gap-3">
@@ -32,7 +34,7 @@ export default function SidebarMenuItem({ icon, label, collapsed, subMenu, activ
           {subMenu.map((item, index) => (
             <button
               key={index}
-              className="flex w-full px-3 py-2 text-sm rounded-lg hover:bg-[var(--bg-primary)] transition"
+              className="flex w-full px-3 py-2 text-sm rounded-lg hover:bg-(--bg-primary) text-(--text-primary) transition"
             >
               {item}
             </button>

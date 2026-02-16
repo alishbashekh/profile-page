@@ -2,6 +2,8 @@ import DashboardContent from "../../components/dashboard/DashboardContent";
 import DashboardCard from "../../components/app/DashboardCard";
 import { dashboardData } from "../../data/dashboardData";
 import { dashboardQickData } from "../../data/dashboardQickData";
+import DashboardTables from "../../components/app/DashboardTable";
+import DashboardCharts from "../../components/app/DashboardCharts";
 // Icon background colors
 const iconBgColors = [
   "rgba(79, 70, 229, 0.2)",   
@@ -40,22 +42,24 @@ export default function Dashboard() {
           />
         ))}
       </div>
-      <div className="mt-6" >
+      <div className="mt-6">
         <h3 className="text-2xl font-bold mb-2">Quick Actions</h3>
       </div>
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
         {dashboardQickData.map((item, index) => (
           <DashboardCard
             key={item.id}
             title={item.title}
             subtitle={item.subtitle}
             icon={item.icon}
-           iconBg={iconBgColors[index]}
+            iconBg={iconBgColors[index]}
             iconColor={iconColors[index]}
             layout="side-center" 
           />
         ))}
       </div>
+      <DashboardTables />
+      <DashboardCharts />
     </DashboardContent>
   );
 }

@@ -35,22 +35,22 @@ export default function Header({ user, toggleSidebar }) {
   }, []);
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 border-b bg-[var(--bg-primary)]">
+    <header className="flex items-center justify-between px-6 py-4 border-b bg-(--bg-primary)">
       {/* LEFT SECTION */}
       <div className="flex items-center gap-4">
         {/* Mobile Sidebar Toggle */}
         <button
-          className="md:hidden p-2 rounded-lg bg-[var(--primary)] text-white"
+          className="md:hidden p-2 rounded-lg bg-(--primary) text-white"
           onClick={toggleSidebar}
         >
           ☰
         </button>
 
         <div>
-          <h1 className="text-xl font-semibold text-[var(--text-primary)]">
+          <h1 className="text-xl font-semibold text-(--text-primary)">
             Welcome back, {user?.name || "User"}
           </h1>
-          <p className="text-sm text-[var(--text-secondary)]">
+          <p className="text-sm text-(--text-secondary)">
             {user?.company || "ACME Corp"} • {user?.role || "Admin"}
           </p>
         </div>
@@ -63,18 +63,18 @@ export default function Header({ user, toggleSidebar }) {
           <input
             type="text"
             placeholder="Search..."
-            className="pl-10 pr-4 py-2 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] text-[var(--text-primary)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            className="pl-10 pr-4 py-2 rounded-lg border border-(--border) bg-(--bg-surface) text-(--text-primary) text-sm focus:outline-none focus:ring-2 focus:ring-(--primary)"
           />
-          <FiSearch className="absolute left-3 top-3 text-[var(--text-secondary)]" />
+          <FiSearch className="absolute left-3 top-3 text-(--text-secondary)" />
         </div>
 
         {/* NOTIFICATIONS */}
         <div className="relative" ref={notifRef}>
           <button
             onClick={() => setOpenNotif((prev) => !prev)}
-            className="relative p-2 rounded-lg hover:bg-[var(--bg-surface)] transition-colors"
+            className="relative p-2 rounded-lg hover:bg-(--bg-surface) transition-colors"
           >
-            <FiBell className="text-[var(--text-primary)]" />
+            <FiBell className="text-(--text-primary)" />
             {notifications.length > 0 && (
               <span className="absolute -top-1 -right-1 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold text-white bg-red-500 rounded-full">
                 {notifications.length}
@@ -83,14 +83,14 @@ export default function Header({ user, toggleSidebar }) {
           </button>
 
           {openNotif && (
-            <div className="absolute right-0 mt-2 w-64 bg-[var(--bg-surface)] border border-[var(--border)] rounded-xl shadow-lg p-3 z-50 max-h-64 overflow-y-auto">
-              <h2 className="font-semibold mb-2 text-[var(--text-primary)]">
+            <div className="absolute right-0 mt-2 w-64 bg-(--bg-surface) border border-(--border) rounded-xl shadow-lg p-3 z-50 max-h-64 overflow-y-auto">
+              <h2 className="font-semibold mb-2 text-(--text-primary)">
                 Notifications
               </h2>
               {notifications.map((n, idx) => (
                 <div
                   key={idx}
-                  className="text-sm py-2 px-3 rounded-lg hover:bg-[var(--bg-primary)] cursor-pointer text-[var(--text-primary)] transition-colors"
+                  className="text-sm py-2 px-3 rounded-lg hover:bg-(--bg-primary) cursor-pointer text-(--text-primary) transition-colors"
                 >
                   {n}
                 </div>
@@ -102,43 +102,43 @@ export default function Header({ user, toggleSidebar }) {
         {/* SETTINGS LINK */}
         <Link
           to="/setting"
-          className="p-2 rounded-lg hover:bg-[var(--bg-surface)] transition-colors"
+          className="p-2 rounded-lg hover:bg-(--bg-surface) transition-colors"
         >
-          <FiSettings className="text-[var(--text-primary)]" />
+          <FiSettings className="text-(--text-primary)" />
         </Link>
 
         {/* AVATAR DROPDOWN */}
         <div className="relative" ref={avatarRef}>
           <button
             onClick={() => setOpenAvatar((prev) => !prev)}
-            className="w-10 h-10 rounded-full bg-[var(--primary)] text-white flex items-center justify-center font-bold"
+            className="w-10 h-10 rounded-full bg-(--primary) text-white flex items-center justify-center font-bold"
           >
             {firstLetter}
           </button>
 
           {openAvatar && (
-            <div className="absolute right-0 mt-3 w-56 bg-[var(--bg-surface)] border border-[var(--border)] rounded-xl shadow-lg p-3 z-50">
+            <div className="absolute right-0 mt-3 w-56 bg-(--bg-surface) border border-(--border) rounded-xl shadow-lg p-3 z-50">
               <div className="mb-3">
-                <p className="font-semibold text-[var(--text-primary)]">
+                <p className="font-semibold text-(--text-primary)">
                   {user?.name}
                 </p>
-                <p className="text-sm text-[var(--text-secondary)]">
+                <p className="text-sm text-(--text-secondary)">
                   {user?.email}
                 </p>
               </div>
 
-              <hr className="border-[var(--border)] mb-2" />
+              <hr className="border-(--border) mb-2" />
 
               <Link
                 to="/profile"
-                className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-[var(--bg-primary)]"
+                className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-(--bg-primary)"
               >
                 <FiUser /> My Profile
               </Link>
 
               <Link
                 to="/setting"
-                className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-[var(--bg-primary)]"
+                className="flex items-center gap-2 w-full px-3 py-2 rounded-lg hover:bg-(--bg-primary)"
               >
                 <FiSettings /> Settings
               </Link>
