@@ -1,9 +1,16 @@
-import React from 'react'
 
-const App = () => {
+import { HelmetProvider } from "react-helmet-async";
+import Routes from "./routes/index";
+
+
+function App() {
+
   return (
-    <div className='text-3xl font-bold underline'>App</div>
-  )
+    <HelmetProvider>
+      <Routes/>
+
+    </HelmetProvider>
+  );
 }
 
-export default App
+export default App;
