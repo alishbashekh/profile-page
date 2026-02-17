@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { FiSettings, FiLogOut, FiUser } from "react-icons/fi";
 import SidebarMenuItem from "./SiderbarMenuItem";
+import { Link } from "react-router-dom";
 
 // Map labels to icons
 const iconMap = {
@@ -169,12 +170,12 @@ export default function Sidebar({ isOpen, setIsOpen, isCollapsed, user }) {
             )}
           </div>
 
-          <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition">
+          <Link to ="/dashboard/profile" className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition">
             {iconMap["My Profile"]} {!isCollapsed && "My Profile"}
-          </button>
-          <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition">
+          </Link>
+          <Link to ="/dashboard/setting" className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--bg-primary) transition">
             {iconMap["Settings"]} {!isCollapsed && "Settings"}
-          </button>
+          </Link>
           <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900 text-red-500 transition">
             {iconMap["Logout"]} {!isCollapsed && "Logout"}
           </button>
